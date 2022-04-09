@@ -1,0 +1,87 @@
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(159, 184, 159);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+header {
+    background-color: rgb(83, 60, 60);
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 0px 20px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(159, 184, 159);
+    font-size: 25px;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.title {
+    margin-left: 40px;
+}
+.nav-header {
+    font-size: 40px;
+    padding: 5px 0px 0px 50px;
+    text-shadow: 1px 1px;
+    width: 30%;
+    background-color: rgb(159, 184, 159);
+    border: solid rgb(159, 184, 159);
+    border-radius: 10px;
+    box-shadow: 5px 10px rgb(132, 143, 132);   
+}
+
+.card {
+    border: 3px solid rgb(83, 60, 60);
+    margin: 20px;
+    padding: 5px;
+    background-color: rgb(83, 60, 60);
+    font-size: 1.5rem;
+
+}
+
+.card-header {
+    color: rgb(224, 212, 212);
+}
+
+.card-body {
+    background-color: rgb(159, 184, 159);
+}
+
+input {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#login-btn, 
+#signup-btn,
+#create-post {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#new-post {
+    color: white;
+    border: 2px solid rgb(83, 60, 60);
+    background-color: rgb(83, 60, 60);;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
