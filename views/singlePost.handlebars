@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+        <h2>{{post.titile}}</h2>
+        <h2>Posted by {{post.user.username}} on {{format_date post.dateCreated}}</h2>
+    </div>
+    <div class="card-body">
+        {{post.content}}
+    </div>
+</div>
+<div>
+    {{#each post.comment as |comment| }}
+    {{> comment-details}}
+    {{/each}}
+</div>
+<form class="card">
+    <div class="car-header"></div>
+    <div class="card-body comment-form">
+        <div class="form-group mb-3">
+            <label for="comment-content">Comment</label>
+            <input class="form-input" type="text" id="comment-content">
+        </div>
+      
+        <div class="form-group mb-2">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script src="/js/comment.js"></script>
+
+
+

@@ -1,0 +1,19 @@
+<form class="card">
+    <div class="card-header">
+        <h2>Edit Post</h2>
+    </div>
+    <form class="card-body edit-post-form">
+        <div class="form-group mb-3">
+            <lable for="edit-titile">Title</lable>
+            <input class="form-input" type="text" id="edit-title" value="{{post.title}}">
+        </div>
+        <div class="form-group mb-3">
+            <label for="edit-content">Content</label>
+            <input class="form-input" type="text" id="edit-content" value="{{post.content}}">
+        </div>
+        <div class="form-group mb-3">
+            <button type="submit" class="btn btn-secondary w-100 mb-2">Update Post</button>
+            <button type="button" class="btn btn-secondary w-100" id="delete-btn">Delete</button>
+        </div>
+    </div>
+</form>
