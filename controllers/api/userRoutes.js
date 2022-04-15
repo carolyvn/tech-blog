@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { resourceLimits } = require('worker_threads');
 const { User } = require('../../models');
 
 // Create new user

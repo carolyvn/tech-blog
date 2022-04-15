@@ -1,6 +1,4 @@
-const { extend } = require('lodash');
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const { deflateSync } = require('zlib');
 const sequelize = require('../config/connection');
 
 class Post extends Model {}
