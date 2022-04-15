@@ -5,13 +5,14 @@ const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Create new post
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.create({
             title: req.body.title,
             content: req.body.content,
             user_id: req.session.user_id,
         });
+        console.log(postData);
 
         res.status(200).json(postData);
     } catch (err) {
@@ -20,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 // Edit the post 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.update({
             title: req.body.title,
@@ -43,7 +44,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete the post
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.destroy({
             where: {
