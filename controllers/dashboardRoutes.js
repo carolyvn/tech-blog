@@ -33,19 +33,19 @@ router.get('/new', withAuth, async (req, res) => {
     });
 });
 
+// Get one post by id
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id);
 
-// router.get('/post/:id', withAuth, async (req, res) => {
-//     try {
-//         const postData = await Post.findByPk(req.params.id);
-
-//         const post = postData.get({ plain: true });
-//         res.render('', {
-//             post,
-//             logged_in: req.session.logged_in,
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+        const post = postData.get({ plain: true });
+        res.render('singlePost', {
+            layout: 'dashboard',
+            post
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
