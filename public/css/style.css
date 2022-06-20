@@ -65,7 +65,8 @@ a:hover {
     background-color: rgb(159, 184, 159);
 }
 
-input {
+input,
+textarea {
     width: 100%;
     border-radius: 5px;
 }

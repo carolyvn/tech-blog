@@ -3,11 +3,11 @@ const newFormHandler = async (event) => {
 
     const title = document.querySelector('#post-title').value;
     const content = document.querySelector('#post-content').value;
-    // const userId = document.querySelector('#userId').value;
 
     console.log(title);
     console.log(content);
-    // console.log(userId);
+
+    // console.log(post_id);
 
     const response = await fetch('/api/post', {
         method: 'POST',
@@ -15,7 +15,6 @@ const newFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json'}
     });
 
-    // document.location.replace('/dashboard');
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
@@ -24,5 +23,5 @@ const newFormHandler = async (event) => {
 };
 
 document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', newFormHandler);
+  .querySelector('.new-post-form')
+  .addEventListener('submit', newFormHandler);
