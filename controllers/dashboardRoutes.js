@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
         res.render('dashboard-admin', {
             layout: 'dashboard',
             posts,
-
+            logged_in: true,
         });
     
     } catch (err) {
@@ -36,12 +36,31 @@ router.get('/new', withAuth, async (req, res) => {
 // Get one post by id
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id);
+        const postData = await Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'dateCreated', 'user_id', 'post_id'],
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    }
+                },
+                {
+                    model: User,
+                    attributes: ['username'],
+                }
+            ]
+        });
 
         const post = postData.get({ plain: true });
-        res.render('singlePost', {
+        res.render('editPost', {
             layout: 'dashboard',
-            post
+            post,
+            logged_in: true
         });
     } catch (err) {
         res.status(500).json(err);

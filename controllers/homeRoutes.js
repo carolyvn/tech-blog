@@ -14,10 +14,13 @@ router.get('/', async (req, res) => {
             ]
         });
 
-        const posts = postData.map((post) => post.get({ plain: true}));
+        // serialize the data
+        const posts = postData.map((post) => post.get({ plain: true }));
 
+        // pass serialized data into template
         res.render('homepage', {
             posts,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -27,18 +30,31 @@ router.get('/', async (req, res) => {
 // Get a post
 router.get('/post/:id', async (req, res) => {
     try {
-        const postData = await Post.findByPk(req.params.id, {
+        const postData = await Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            attributes: [
+                'id',
+                'content',
+                'title',
+                'dateCreated'
+            ],
             include: [
                 {
-                    model: User,
+                    model: User, 
                     attributes: ['username'],
                 },
                 {
                     model: Comment,
-                    attributes: ['user_id', 'post_id', 'comment_text',]
+                    attributes: ['id', 'dateCreated', 'comment_text', 'user_id', 'post_id'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
                 }
             ]
-        });
+        })
 
         const post = postData.get({ plain: true });
 
@@ -54,20 +70,20 @@ router.get('/post/:id', async (req, res) => {
 // Login route
 router.get('/login', async (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/');
-      return;
+        res.redirect('/');
+        return;
     }
-    res.render('login')
-  });
-  
-  // Signup route
-  router.get('/signup', async (req, res) => {
+    res.render('login');
+});
+
+// Signup route
+router.get('/signup', async (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/');
-      return;
+        res.redirect('/');
+        return;
     }
     res.render('signup');
-  });
+});
 
 
 module.exports = router;
