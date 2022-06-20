@@ -9,9 +9,7 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const app = express();
-const PORT = process.env.PORT || 3301;
-
-const db = require('./models');
+const PORT = process.env.PORT || 3303;
 
 const sess = {
     secret: 'Super secret secret',
@@ -25,8 +23,10 @@ const sess = {
 
 app.use(session(sess));
 
+// set up Handlebars engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+// inform express which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
