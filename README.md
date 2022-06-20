@@ -3,6 +3,27 @@
 ## Description
 Build a CMS-style blog site similar to Wordpress site, where developers can publish their blog posts and comment on other developers'post as well.
 
+## Table of Contents
+ - [Description](#description)
+ - [Installation](#installation)
+ - [Deployed Link](#deployed-link)
+ - [Screenshoot](#screenshoot)
+ - [User Story](#user-story)
+ - [Acceptance Criteria](#acceptance-criteria)
+ - [Questions](#questions)
+
+## Installation
+ - Clone the repo
+ - Install dependencies with `npm install`
+ - Seed the DB with `npm run seed`
+ - Start the app with `npm start`
+
+## Deployed Link
+ [Heroku Link](https://tech-blog-yan.herokuapp.com/)
+
+## Screenshoot
+![Screen Shot 2022-06-19 at 7 08 23 PM](https://user-images.githubusercontent.com/90424035/174513757-70960453-a61b-4bbe-bc8a-169d8483dd8a.png)
+
 ## User Story
         AS A developer who writes about tech
         I WANT a CMS-style blog site
@@ -43,14 +64,9 @@ Build a CMS-style blog site similar to Wordpress site, where developers can publ
         WHEN I am idle on the site for more than a set time
         THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
-## Installation
- - Clone the repo
- - Install dependencies with `npm install`
- - Seed the DB with `npm run seed`
- - Start the app with `npm start`
+## Questions
+If you have any questions, please contact me at: 
+- GitHub: [@carolyvn](https://github.com/carolyvn)
+- Email: [@email me](dreamfx@hotmail.com)
 
-## Demo
-![14-mvc-homework-demo-01](https://user-images.githubusercontent.com/90424035/170895691-e0b5e70f-9206-4335-905a-7512424aa7b3.gif)
-
-## Deployed Link
 
