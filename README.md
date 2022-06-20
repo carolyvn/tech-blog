@@ -22,7 +22,7 @@ Build a CMS-style blog site similar to Wordpress site, where developers can publ
  [Heroku Link](https://tech-blog-yan.herokuapp.com/)
 
 ## Screenshoot
-![Screen Shot 2022-06-19 at 7 08 23 PM](https://user-images.githubusercontent.com/90424035/174513757-70960453-a61b-4bbe-bc8a-169d8483dd8a.png)
+![Screen Shot 2022-06-19 at 8 40 32 PM](https://user-images.githubusercontent.com/90424035/174521466-7a564fc0-5882-440b-8270-edc16ffb1593.png)
 
 ## User Story
         AS A developer who writes about tech
