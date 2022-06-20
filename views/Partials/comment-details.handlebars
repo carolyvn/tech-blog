@@ -5,7 +5,12 @@
             <h2 clas="m-5"></h2>
         </div>
         <div class="card-body">
-            {{comment.comment}}
+            <div>
+                {{comment_text}}
+            </div>
+            <div>
+                -{{user.username}}, {{format_date dateCreated}}
+            </div>
         </div>
     </div>
     {{/each}}
